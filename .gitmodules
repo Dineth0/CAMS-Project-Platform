@@ -1,0 +1,9 @@
+[submodule "Service-Registry"]
+	path = Service-Registry
+	url = https://github.com/Dineth0/CAMS-Project-Platform-Service-Registry.git
+[submodule "API-Gateway"]
+	path = API-Gateway
+	url = https://github.com/Dineth0/CAMS-Project-Platform-API-Gateway.git
+[submodule "Config-Server"]
+	path = Config-Server
+	url = https://github.com/Dineth0/CAMS-Project-Platform-Config-Server.git
