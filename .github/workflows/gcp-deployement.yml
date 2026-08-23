@@ -5,6 +5,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      VM_NAME: vm-platform-seed
+      ZONE: asia-southeast1-a
+
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -19,3 +23,11 @@ jobs:
 
       - name: Set up gcloud Cloud SDK environment
         uses: google-github-actions/setup-gcloud@v3.0.1
+
+      - name: Start the vm-platform-seed
+        run: gcloud compute instances start ${{ env.VM_NAME }} --zone=${{ env.ZONE }}
+
+      - name: Connect with the vm-platform-seed instance through SSH
+        run: >
+            gcloud compute ssh  ${{ env.USER_NAME }}@${{ env.VM_NAME }} --zone=${{ env.ZONE }} 
+            --command "echo 'Connected to vm-platform-seed successfully!'"
