@@ -17,3 +17,6 @@ jobs:
           service_account: ${{ secrets.GCP_SA_EMAIL }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+
+      - name: Set up gcloud Cloud SDK environment
+        uses: google-github-actions/setup-gcloud@v3.0.1
